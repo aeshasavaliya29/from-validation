@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Form Validation - Name</title>
+</head>
+
+<body>
+
+     <form method="post" onsubmit="return validate()">
+
+          Enter Name:
+          <input type="text" id="name" />
+          <br>
+          <input type="submit">
+
+     </form>
+</body>
+
+</html>
+
+<script>
+     function validate() {
+          var nameTxt = document.getElementById("name").value;
+          var minChars = 2;
+          var maxChars = 30;
+
+          if (nameTxt.length < minChars || nameTxt.length > maxChars) {
+               alert("Name should be between " + minChars + " and " + maxChars + " characters");
+               return false;
+          } else {
+               return true;
+          }
+     }
+</script>
